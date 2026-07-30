@@ -4,408 +4,513 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Tunes - Modern Web Music Streaming Platform">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
         <link rel="stylesheet" href="style.css">
-        <title>Music</title>
+        <title>Tunes - Music Player</title>
     </head>
     <body>
         <header>
-            <div class="menu_side">
-                <h1>Tunes...</h1>
+            <!-- Sidebar -->
+            <aside class="menu_side">
+                <div class="brand">
+                    <h1><i class="bi bi-soundwave brand-icon"></i> Tunes</h1>
+                </div>
                 <div class="Music">
                     <h4 class="active"><span></span><i class="bi bi-music-note-beamed"></i>Playlist</h4>
-
                 </div>
-                <div class="menu_song">
-                    <li class="song_item">
+                <ul class="menu_song">
+                    <li class="song_item songItem">
                         <span>01</span>
-                        <img src="img/1.jpg" alt="nn">
+                        <img src="img/1.jpg" alt="Lord Shiva">
                         <h5>
                             Lord Shiva
                             <div class="subtitle">Bahubali</div>
-                            
                         </h5>
-                            <i class="bi BluesPlay bi-play-circle-fill" id="1"></i>
+                        <i class="bi BluesPlay bi-play-circle-fill" id="1" role="button" aria-label="Play Lord Shiva"></i>
                     </li>
-                    <li class="song_item">
+                    <li class="song_item songItem">
                         <span>02</span>
-                        <img src="img/2.jpg" alt="nn">
+                        <img src="img/2.jpg" alt="Rolex">
                         <h5>
                             Rolex 
                             <div class="subtitle">Vikram</div>
-                            
                         </h5>
-                            <i class="bi BluesPlay bi-play-circle-fill" id="2"></i>
+                        <i class="bi BluesPlay bi-play-circle-fill" id="2" role="button" aria-label="Play Rolex"></i>
                     </li>
-                    <li class="song_item">
+                    <li class="song_item songItem">
                         <span>03</span>
-                        <img src="img/3.jpg" alt="nn">
+                        <img src="img/3.jpg" alt="Varaha Roopam">
                         <h5>
                             Varaha Roopam
                             <div class="subtitle">Kantara</div>
-                            
                         </h5>
-                            <i class="bi BluesPlay bi-play-circle-fill" id="3"></i>
+                        <i class="bi BluesPlay bi-play-circle-fill" id="3" role="button" aria-label="Play Varaha Roopam"></i>
                     </li>
-                    <li class="song_item">
+                    <li class="song_item songItem">
                         <span>04</span>
-                        <img src="img/4.jpg" alt="nn">
+                        <img src="img/4.jpg" alt="Global Gear">
                         <h5>
                             Global Gear
                             <div class="subtitle">Album</div>
-                            
                         </h5>
-                            <i class="bi BluesPlay bi-play-circle-fill" id="4"></i>
+                        <i class="bi BluesPlay bi-play-circle-fill" id="4" role="button" aria-label="Play Global Gear"></i>
                     </li>
-                    <li class="song_item">
+                    <li class="song_item songItem">
                         <span>05</span>
-                        <img src="img/5.jpg" alt="nn">
+                        <img src="img/5.jpg" alt="Magician's call">
                         <h5>
                             Magician's call
                             <div class="subtitle">Mersal</div>
-                            
                         </h5>
-                            <i class="bi BluesPlay bi-play-circle-fill" id="5"></i>
+                        <i class="bi BluesPlay bi-play-circle-fill" id="5" role="button" aria-label="Play Magician's call"></i>
                     </li>
-                    <li class="song_item">
+                    <li class="song_item songItem">
                         <span>06</span>
-                        <img src="img/6.jpg" alt="nn">
+                        <img src="img/6.jpg" alt="Veera's Entry">
                         <h5>
                             Veera's Entry
                             <div class="subtitle">Beast</div>
-                            
                         </h5>
-                            <i class="bi BluesPlay bi-play-circle-fill" id="6"></i>
+                        <i class="bi BluesPlay bi-play-circle-fill" id="6" role="button" aria-label="Play Veera's Entry"></i>
                     </li>
-                    <li class="song_item">
+                    <li class="song_item songItem">
                         <span>07</span>
-                        <img src="img/7.jpg" alt="nn">
+                        <img src="img/7.jpg" alt="Inkem Inkem">
                         <h5>
                             Inkem Inkem
                             <div class="subtitle">Geetha Govindam</div>
-                            
                         </h5>
-                            <i class="bi BluesPlay bi-play-circle-fill" id="7"></i>
+                        <i class="bi BluesPlay bi-play-circle-fill" id="7" role="button" aria-label="Play Inkem Inkem"></i>
                     </li>
-                    <li class="song_item">
+                    <li class="song_item songItem">
                         <span>08</span>
-                        <img src="img/8.jpg" alt="nn">
+                        <img src="img/8.jpg" alt="Imaye Imaye">
                         <h5>
                             Imaye Imaye
                             <div class="subtitle">Raja Rani</div>
                         </h5>
-                            <i class="bi BluesPlay bi-play-circle-fill" id="8"></i>
+                        <i class="bi BluesPlay bi-play-circle-fill" id="8" role="button" aria-label="Play Imaye Imaye"></i>
                     </li>
-                    <li class="song_item">
+                    <li class="song_item songItem">
                         <span>09</span>
-                        <img src="img/9.jpg" alt="nn">
+                        <img src="img/9.jpg" alt="Love Score">
                         <h5>
                             Love Score
                             <div class="subtitle">Premalu</div>
-                            
                         </h5>
-                            <i class="bi BluesPlay bi-play-circle-fill" id="9"></i>
+                        <i class="bi BluesPlay bi-play-circle-fill" id="9" role="button" aria-label="Play Love Score"></i>
                     </li>
-                    <li class="song_item">
+                    <li class="song_item songItem">
                         <span>10</span>
-                        <img src="img/10.jpg" alt="nn">
+                        <img src="img/10.jpg" alt="Pularadha">
                         <h5>
                             Pularadha
                             <div class="subtitle">Dear Comrade</div>
-                            
                         </h5>
-                            <i class="bi BluesPlay bi-play-circle-fill" id="10"></i>
+                        <i class="bi BluesPlay bi-play-circle-fill" id="10" role="button" aria-label="Play Pularadha"></i>
                     </li>
-                    
-                </div>
-            </div>
+                </ul>
+            </aside>
 
-
-            <div class="song_side">
+            <!-- Main Content Area -->
+            <main class="song_side">
                 <nav>
-                    <ul>
-                        <li>DISCOVER<span></span></li>
-                        <li>MY LIBRARY</li>
-                        <li>RADIO</li>
+                    <ul id="main_nav_tabs">
+                        <li id="nav_discover" class="nav_tab active_tab">DISCOVER<span></span></li>
+                        <li id="nav_library" class="nav_tab">MY LIBRARY</li>
+                        <li id="nav_radio" class="nav_tab">RADIO</li>
                     </ul>
                     <div class="search">
                         <i class="bi bi-search"></i>
-                        <input type="text" placeholder="Search Music...">
+                        <input type="text" id="search_input" placeholder="Search Music, Artists..." aria-label="Search songs">
+                        <i class="bi bi-x-circle-fill clear_search" id="clear_search" style="display: none; cursor: pointer; color: #94a3b8; font-size: 0.9rem;"></i>
                     </div>
                     <div class="user">
-                    <img src="img/logo.png" alt="">
+                        <img src="img/logo.png" alt="User Profile">
                     </div>
                 </nav>
-                <div class="content">
-                    <h1>Shiva</h1>            
-                    <p>Olir Vidum En Desane....Kulir Mazhai Than Vaasane.... <br>
-                        Ezhil Migu En Nesane....Alitholikum Eesane....</p>
+
+                <!-- Search Results Section (Shown when typing) -->
+                <section id="search_results_section" class="search_results_container" style="display: none;">
+                    <div class="section_header">
+                        <h4>Search Results</h4>
+                        <span id="search_count_badge" class="badge">0 matches</span>
+                    </div>
+                    <div id="search_results_grid" class="search_grid"></div>
+                </section>
+
+                <!-- Page 1: Discover -->
+                <div id="page_discover" class="page_view active_view">
+                    <!-- Hero Section -->
+                    <section class="content">
+                        <div class="content_badge"><i class="bi bi-lightning-charge-fill"></i> FEATURED TRACK</div>
+                        <h1>Shiva</h1>            
+                        <p>Olir Vidum En Desane....Kulir Mazhai Than Vaasane.... <br>
+                            Ezhil Migu En Nesane....Alitholikum Eesane....</p>
                         <div class="buttons">
-                            <button>Play</button>        
+                            <button id="hero_play_btn"><i class="bi bi-play-fill"></i> Play</button>        
                         </div>
-                </div>
+                    </section>
 
-                <div class="Bliss">
-                    <div class="h4">
-                        <h4>Bliss</h4>
-                        <div class="btn_s">
-                            <i class="bi bi-arrow-left-short" id="bliss_song_left"></i>
-                            <i class="bi bi-arrow-right-short" id="bliss_song_right"></i>
+                    <!-- Bliss Category Carousel -->
+                    <section class="Bliss">
+                        <div class="h4">
+                            <h4>Bliss</h4>
+                            <div class="btn_s">
+                                <i class="bi bi-chevron-left" id="bliss_song_left" role="button" aria-label="Scroll left Bliss"></i>
+                                <i class="bi bi-chevron-right" id="bliss_song_right" role="button" aria-label="Scroll right Bliss"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="bliss_song">
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/11.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="11"></i>
-                            </div> 
-                            <h5>Kadhale Kadhale <br>
-                                <div class="subtitle">96</div>
-                            </h5>
-                            
-                        </li>
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/12.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="12"></i>
-                            </div> 
-                            <h5>Munbe Vaa <br>
-                                <div class="subtitle">Sillunu oru kadhal</div>
-                            </h5>
-                            
-                        </li>
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/13.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="13"></i>
-                            </div> 
-                            <h5>Pudhu Vellai Mazhai <br>
-                                <div class="subtitle">Roja</div>
-                            </h5>
-                            
-                        </li>
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/14.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="14"></i>
-                            </div> 
-                            <h5>Megham karukaadha <br>
-                                <div class="subtitle">Thiruchitrambalam</div>
-                            </h5>
-                            
-                        </li>
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/15.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="15"></i>
-                            </div> 
-                            <h5>Aathadi Aathadi <br>
-                                <div class="subtitle">Anegan</div>
-                            </h5>
-                            
-                        </li>
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/16.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="16"></i>
-                            </div> 
-                            <h5>Idhu Enna Mayamo <br>
-                                <div class="subtitle">Adhithya Varma</div>
-                            </h5>
-                            
-                        </li>
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/17.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="17"></i>
-                            </div> 
-                            <h5>Theme of 3 <br>
-                                <div class="subtitle">3</div>
-                            </h5>
-                            
-                        </li>
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/18.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="18"></i>
-                            </div> 
-                            <h5>Uyire Uyire <br>
-                                <div class="subtitle">Amaran</div>
-                            </h5>
-                            
-                        </li>
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/19.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="19"></i>
-                            </div> 
-                            <h5>Snehidane <br>
-                                <div class="subtitle">Alaipayuthey</div>
-                            </h5>
-                            
-                        </li>
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/20.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="20"></i>
-                            </div> 
-                            <h5>Chella Kutty <br>
-                                <div class="subtitle">Theri</div>
-                            </h5>
-                            
-                        </li>
-                    </div>
-
-                </div>
-                <div class="Blues">
-                    <div class="h4">
-                        <h4>Blues</h4>
-                        <div class="btn_s">
-                            <i class="bi bi-arrow-left-short" id="blues_song_left"></i>
-                            <i class="bi bi-arrow-right-short" id="blues_song_right"></i>
+                        <div class="bliss_song">
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/11.jpg" alt="Kadhale Kadhale">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="11" role="button" aria-label="Play Kadhale Kadhale"></i>
+                                </div> 
+                                <h5>Kadhale Kadhale <br>
+                                    <div class="subtitle">96</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/12.jpg" alt="Munbe Vaa">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="12" role="button" aria-label="Play Munbe Vaa"></i>
+                                </div> 
+                                <h5>Munbe Vaa <br>
+                                    <div class="subtitle">Sillunu oru kadhal</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/13.jpg" alt="Pudhu Vellai Mazhai">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="13" role="button" aria-label="Play Pudhu Vellai Mazhai"></i>
+                                </div> 
+                                <h5>Pudhu Vellai Mazhai <br>
+                                    <div class="subtitle">Roja</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/14.jpg" alt="Megham karukaadha">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="14" role="button" aria-label="Play Megham karukaadha"></i>
+                                </div> 
+                                <h5>Megham karukaadha <br>
+                                    <div class="subtitle">Thiruchitrambalam</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/15.jpg" alt="Aathadi Aathadi">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="15" role="button" aria-label="Play Aathadi Aathadi"></i>
+                                </div> 
+                                <h5>Aathadi Aathadi <br>
+                                    <div class="subtitle">Anegan</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/16.jpg" alt="Idhu Enna Mayamo">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="16" role="button" aria-label="Play Idhu Enna Mayamo"></i>
+                                </div> 
+                                <h5>Idhu Enna Mayamo <br>
+                                    <div class="subtitle">Adhithya Varma</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/17.jpg" alt="Theme of 3">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="17" role="button" aria-label="Play Theme of 3"></i>
+                                </div> 
+                                <h5>Theme of 3 <br>
+                                    <div class="subtitle">3</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/18.jpg" alt="Uyire Uyire">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="18" role="button" aria-label="Play Uyire Uyire"></i>
+                                </div> 
+                                <h5>Uyire Uyire <br>
+                                    <div class="subtitle">Amaran</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/19.jpg" alt="Snehidane">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="19" role="button" aria-label="Play Snehidane"></i>
+                                </div> 
+                                <h5>Snehidane <br>
+                                    <div class="subtitle">Alaipayuthey</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/20.jpg" alt="Chella Kutty">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="20" role="button" aria-label="Play Chella Kutty"></i>
+                                </div> 
+                                <h5>Chella Kutty <br>
+                                    <div class="subtitle">Theri</div>
+                                </h5>
+                            </li>
                         </div>
-                    </div>
-                    <div class="blues_song">
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/21.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="21"></i>
-                            </div> 
-                            <h5>Newyork Nagaram <br>
-                                <div class="subtitle">Sillunu oru kadhal</div>
-                            </h5>
-                            
-                        </li>
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/22.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="22"></i>
-                            </div> 
-                            <h5>Nalla Nanban <br>
-                                <div class="subtitle">Nanban</div>
-                            </h5>
-                            
-                        </li>
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/23.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="23"></i>
-                            </div> 
-                            <h5>Death of Bahubali <br>
-                                <div class="subtitle">Bahubali</div>
-                            </h5>
-                            
-                        </li>
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/24.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="24"></i>
-                            </div> 
-                            <h5>Muthu Mazhaiye <br>
-                                <div class="subtitle">Mazhai</div>
-                            </h5>
-                            
-                        </li>
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/25.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="25"></i>
-                            </div> 
-                            <h5>Pain Of Love <br>
-                                <div class="subtitle">3</div>
-                            </h5>
-                            
-                        </li>
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/26.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="26"></i>
-                            </div> 
-                            <h5>Theme of Sita Ramam <br>
-                                <div class="subtitle">Sita Ramam</div>
-                            </h5>
-                            
-                        </li>
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/27.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="27"></i>
-                            </div> 
-                            <h5>Life Of Pazham <br>
-                                <div class="subtitle">Thiruchitrambalam</div>
-                            </h5>
-                            
-                        </li>
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/28.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="28"></i>
-                            </div> 
-                            <h5>Hello bgm <br>
-                                <div class="subtitle">Hello</div>
-                            </h5>
-                            
-                        </li>
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/29.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="29"></i>
-                            </div> 
-                            <h5>Unnale Ennalum <br>
-                                <div class="subtitle">Theri</div>
-                            </h5>
-                            
-                        </li>
-                        <li class="song_item">
-                            <div class="img_play">                       
-                                <img src="img/30.jpg" alt="nn">
-                                <i class="bi BluesPlay bi-play-circle-fill" id="30"></i>
-                            </div> 
-                            <h5>Uyire Uyire <br>
-                                <div class="subtitle">Santhosh Subramanian</div>
-                            </h5>
-                            
-                        </li>
-                    </div>
+                    </section>
 
+                    <!-- Blues Category Carousel -->
+                    <section class="Blues">
+                        <div class="h4">
+                            <h4>Blues</h4>
+                            <div class="btn_s">
+                                <i class="bi bi-chevron-left" id="blues_song_left" role="button" aria-label="Scroll left Blues"></i>
+                                <i class="bi bi-chevron-right" id="blues_song_right" role="button" aria-label="Scroll right Blues"></i>
+                            </div>
+                        </div>
+                        <div class="blues_song">
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/21.jpg" alt="Newyork Nagaram">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="21" role="button" aria-label="Play Newyork Nagaram"></i>
+                                </div> 
+                                <h5>Newyork Nagaram <br>
+                                    <div class="subtitle">Sillunu oru kadhal</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/22.jpg" alt="Nalla Nanban">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="22" role="button" aria-label="Play Nalla Nanban"></i>
+                                </div> 
+                                <h5>Nalla Nanban <br>
+                                    <div class="subtitle">Nanban</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/23.jpg" alt="Death of Bahubali">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="23" role="button" aria-label="Play Death of Bahubali"></i>
+                                </div> 
+                                <h5>Death of Bahubali <br>
+                                    <div class="subtitle">Bahubali</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/24.jpg" alt="Muthu Mazhaiye">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="24" role="button" aria-label="Play Muthu Mazhaiye"></i>
+                                </div> 
+                                <h5>Muthu Mazhaiye <br>
+                                    <div class="subtitle">Mazhai</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/25.jpg" alt="Pain Of Love">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="25" role="button" aria-label="Play Pain Of Love"></i>
+                                </div> 
+                                <h5>Pain Of Love <br>
+                                    <div class="subtitle">3</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/26.jpg" alt="Theme of Sita Ramam">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="26" role="button" aria-label="Play Theme of Sita Ramam"></i>
+                                </div> 
+                                <h5>Theme of Sita Ramam <br>
+                                    <div class="subtitle">Sita Ramam</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/27.jpg" alt="Life Of Pazham">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="27" role="button" aria-label="Play Life Of Pazham"></i>
+                                </div> 
+                                <h5>Life Of Pazham <br>
+                                    <div class="subtitle">Thiruchitrambalam</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/28.jpg" alt="Hello bgm">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="28" role="button" aria-label="Play Hello bgm"></i>
+                                </div> 
+                                <h5>Hello bgm <br>
+                                    <div class="subtitle">Hello</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/29.jpg" alt="Unnale Ennalum">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="29" role="button" aria-label="Play Unnale Ennalum"></i>
+                                </div> 
+                                <h5>Unnale Ennalum <br>
+                                    <div class="subtitle">Theri</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/30.jpg" alt="Uyire Uyire">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="30" role="button" aria-label="Play Uyire Uyire"></i>
+                                </div> 
+                                <h5>Uyire Uyire <br>
+                                    <div class="subtitle">Santhosh Subramanian</div>
+                                </h5>
+                            </li>
+                        </div>
+                    </section>
                 </div>
-                
-            </div>
-            
 
-            <div class="master_play">
-                <div class="wave" id="wave">
-                    <div class="wave1"></div>
-                    <div class="wave1"></div>
-                    <div class="wave1"></div>
+                <!-- Page 2: My Library -->
+                <div id="page_library" class="page_view" style="display: none;">
+                    <section class="library_hero">
+                        <div class="library_info">
+                            <div class="library_icon_badge"><i class="bi bi-music-bucket"></i></div>
+                            <div>
+                                <span class="subhead">YOUR COLLECTION</span>
+                                <h2>My Library</h2>
+                                <p class="meta">30 Tracks &bull; 2 Playlists &bull; 1 hr 45 min</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="library_content">
+                        <div class="library_filter_bar">
+                            <button class="filter_pill active"><i class="bi bi-heart-fill"></i> Favorite Tracks</button>
+                            <button class="filter_pill"><i class="bi bi-disc"></i> Albums</button>
+                            <button class="filter_pill"><i class="bi bi-person-heart"></i> Top Artists</button>
+                        </div>
+
+                        <div class="track_table_container">
+                            <table class="track_table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Title</th>
+                                        <th>Album / Movie</th>
+                                        <th><i class="bi bi-clock"></i></th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="library_track_list">
+                                    <!-- Populated dynamically via app.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
                 </div>
-                <img src="img/1.jpg" alt="nn" id="poster_master_play">
-                <h5 id="title">
-                    Lord Shiva<br>
-                    <div class="subtitle">Bahubali</div>    
-                </h5>
-                <div class="icon">
-                    
-                    <i class="bi bi-skip-start-fill" id="back"></i>
-                    <i class="bi bi-play-fill" id="masterPlay"></i>
-                    <i class="bi bi-skip-end-fill" id="next"></i>
-                    <a href="" download id="download_music"><i class="bi bi-cloud-arrow-down-fill" ></i></a>         
+
+                <!-- Page 3: Radio -->
+                <div id="page_radio" class="page_view" style="display: none;">
+                    <section class="radio_hero">
+                        <div class="radio_hero_content">
+                            <div class="live_badge"><span class="pulse_dot"></span> LIVE BROADCAST</div>
+                            <h2>Tunes Radio Stations</h2>
+                            <p>Non-stop curated music streaming 24/7 across your favorite genres and composers.</p>
+                        </div>
+                    </section>
+
+                    <section class="radio_grid_section">
+                        <h4>Popular Stations</h4>
+                        <div class="radio_grid">
+                            <div class="radio_card" onclick="playRadioStation(1)">
+                                <div class="radio_img">
+                                    <img src="img/1.jpg" alt="A.R. Rahman Radio">
+                                    <div class="radio_overlay"><i class="bi bi-play-circle-fill"></i></div>
+                                </div>
+                                <h5>A.R. Rahman Hits</h5>
+                                <p>Soulful Melodies & Superhits</p>
+                            </div>
+                            <div class="radio_card" onclick="playRadioStation(6)">
+                                <div class="radio_img">
+                                    <img src="img/6.jpg" alt="Anirudh Beats">
+                                    <div class="radio_overlay"><i class="bi bi-play-circle-fill"></i></div>
+                                </div>
+                                <h5>Anirudh High Energy</h5>
+                                <p>Chartbusters & Bass Boosted</p>
+                            </div>
+                            <div class="radio_card" onclick="playRadioStation(11)">
+                                <div class="radio_img">
+                                    <img src="img/11.jpg" alt="90s Romance">
+                                    <div class="radio_overlay"><i class="bi bi-play-circle-fill"></i></div>
+                                </div>
+                                <h5>Romantic Bliss</h5>
+                                <p>Love Songs & Slow Jams</p>
+                            </div>
+                            <div class="radio_card" onclick="playRadioStation(21)">
+                                <div class="radio_img">
+                                    <img src="img/21.jpg" alt="Midnight Blues">
+                                    <div class="radio_overlay"><i class="bi bi-play-circle-fill"></i></div>
+                                </div>
+                                <h5>Midnight Blues</h5>
+                                <p>Chill & Calming Soundtracks</p>
+                            </div>
+                            <div class="radio_card" onclick="playRadioStation(7)">
+                                <div class="radio_img">
+                                    <img src="img/7.jpg" alt="Acoustic Express">
+                                    <div class="radio_overlay"><i class="bi bi-play-circle-fill"></i></div>
+                                </div>
+                                <h5>Acoustic Unplugged</h5>
+                                <p>Strings, Vocals & Soft Beats</p>
+                            </div>
+                            <div class="radio_card" onclick="playRadioStation(3)">
+                                <div class="radio_img">
+                                    <img src="img/3.jpg" alt="Folk & Ethnic">
+                                    <div class="radio_overlay"><i class="bi bi-play-circle-fill"></i></div>
+                                </div>
+                                <h5>Folk & Instrumental</h5>
+                                <p>Traditional Rhythms & Themes</p>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-                <span id="currentStart">0:00</span>
-                <div class="bar">
-                    <input type="range" id="seek" min="0" max="100">
-                    <div class="bar2" id="bar2"></div>
-                    <div class="dot"></div>
+            </main>
+
+            <!-- Master Player Dock -->
+            <footer class="master_play">
+                <div class="master_play_info">
+                    <div class="wave" id="wave">
+                        <div class="wave1"></div>
+                        <div class="wave1"></div>
+                        <div class="wave1"></div>
+                    </div>
+                    <img src="img/1.jpg" alt="Now Playing Poster" id="poster_master_play">
+                    <h5 id="title">
+                        Lord Shiva<br>
+                        <div class="subtitle">Bahubali</div>    
+                    </h5>
                 </div>
-                <span id="currentEnd">0:00</span>
-                <div class="vol">
-                   <i class="bi bi-volume-up-fill" id="vol_icon"></i>
-                   <input type="range" min="0" max="100" id="vol"> 
-                    <div class="vol_bar" ></div>
-                    <div class="dot" id="vol_dot"></div>
+                <div class="master_play_center">
+                    <div class="icon">
+                        <i class="bi bi-skip-start-fill" id="back" role="button" aria-label="Previous Track"></i>
+                        <i class="bi bi-play-fill" id="masterPlay" role="button" aria-label="Play/Pause"></i>
+                        <i class="bi bi-skip-end-fill" id="next" role="button" aria-label="Next Track"></i>
+                        <a href="audio/1.mp3" download="Lord_Shiva.mp3" id="download_music" aria-label="Download Song"><i class="bi bi-cloud-arrow-down-fill"></i></a>         
+                    </div>
+                    <div class="timeline_container">
+                        <span id="currentStart">0:00</span>
+                        <div class="bar">
+                            <input type="range" id="seek" min="0" max="100" value="0" aria-label="Seek track position">
+                            <div class="bar2" id="bar2"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <span id="currentEnd">0:00</span>
+                    </div>
                 </div>
-            </div>
+                <div class="master_play_right">
+                    <div class="vol">
+                        <i class="bi bi-volume-up-fill" id="vol_icon" role="button" aria-label="Volume control"></i>
+                        <input type="range" min="0" max="100" id="vol" value="100" aria-label="Volume level"> 
+                        <div class="vol_bar"></div>
+                        <div class="dot" id="vol_dot"></div>
+                    </div>
+                </div>
+            </footer>
         </header>
-            <script src="app.js"></script>
+        <script src="app.js"></script>
     </body>
 </html>
