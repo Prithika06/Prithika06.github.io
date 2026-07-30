@@ -136,7 +136,7 @@ if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileSidebar);
 if (closeSidebarBtn) closeSidebarBtn.addEventListener('click', closeMobileSidebar);
 if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeMobileSidebar);
 
-// Update Hero Banner Dynamically
+// Update Hero Banner Dynamically to Match Current Track
 const updateHeroBanner = (trackId) => {
     heroCurrentTrackId = trackId;
     let heroTitle = document.getElementById('hero_title');
@@ -273,7 +273,7 @@ Array.from(document.getElementsByClassName('songItem')).forEach((e) => {
     });
 });
 
-// Hero Play Button Interaction
+// Hero Play Button Interaction - Synchronized with Current Hero Track
 let heroPlayBtn = document.getElementById('hero_play_btn');
 if (heroPlayBtn) {
     heroPlayBtn.addEventListener('click', () => {

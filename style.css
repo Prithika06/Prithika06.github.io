@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TUNES MUSIC PLAYER - DESIGN SYSTEM & MOBILE OPTIMIZED STYLES
+   TUNES MUSIC PLAYER - COMPACT, HIGH-POLISH DESIGN SYSTEM (DESKTOP & MOBILE)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -53,8 +53,8 @@
   /* Border Radii */
   --radius-xs: 6px;
   --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
   --radius-full: 9999px;
 
   /* Transitions */
@@ -126,8 +126,8 @@ header {
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: 280px 1fr;
-  grid-template-rows: 1fr 90px;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: 1fr 85px;
   grid-template-areas:
     "sidebar main"
     "player  player";
@@ -136,7 +136,7 @@ header {
 }
 
 /* --------------------------------------------------------------------------
-   4. SIDEBAR (.menu_side) & MOBILE OVERLAY
+   4. SIDEBAR (.menu_side)
    -------------------------------------------------------------------------- */
 .sidebar_overlay {
   position: fixed;
@@ -163,7 +163,7 @@ header .menu_side {
   border-right: 1px solid var(--border-subtle);
   display: flex;
   flex-direction: column;
-  padding: var(--space-lg) var(--space-md);
+  padding: var(--space-md) var(--space-sm);
   overflow: hidden;
   z-index: 10;
   box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
@@ -173,12 +173,12 @@ header .menu_side .brand {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
   padding: 0 var(--space-xs);
 }
 
 header .menu_side .brand h1 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 800;
   letter-spacing: -0.5px;
   background: var(--accent-gradient);
@@ -190,7 +190,7 @@ header .menu_side .brand h1 {
 }
 
 header .menu_side .brand .brand-icon {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: var(--accent-cyan);
   -webkit-text-fill-color: initial;
   filter: drop-shadow(0 0 8px var(--accent-glow));
@@ -207,12 +207,12 @@ header .menu_side .brand .brand-icon {
 }
 
 header .menu_side .Music {
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-xs);
   padding: 0 var(--space-xs);
 }
 
 header .menu_side .Music h4 {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.8px;
@@ -222,7 +222,7 @@ header .menu_side .Music h4 {
   gap: var(--space-xs);
   cursor: pointer;
   transition: var(--transition-fast);
-  padding: var(--space-xs) 0;
+  padding: var(--space-2xs) 0;
 }
 
 header .menu_side .Music h4:hover {
@@ -235,7 +235,7 @@ header .menu_side .Music .active {
 
 header .menu_side .Music .active .bi {
   display: inline-block;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--accent-cyan);
 }
 
@@ -245,7 +245,7 @@ header .menu_side .menu_song {
   padding-right: var(--space-2xs);
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: 6px;
   list-style: none;
 }
 
@@ -253,8 +253,9 @@ header .menu_side .menu_song li.song_item {
   position: relative;
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-xs) var(--space-sm);
+  gap: 10px;
+  padding: 6px 10px;
+  height: 52px;
   border-radius: var(--radius-sm);
   background: transparent;
   border: 1px solid transparent;
@@ -265,53 +266,51 @@ header .menu_side .menu_song li.song_item {
 header .menu_side .menu_song li.song_item:hover {
   background: var(--bg-surface-hover);
   border-color: var(--border-subtle);
-  transform: translateX(4px);
 }
 
 header .menu_side .menu_song li.song_item span {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--text-muted);
-  min-width: 20px;
+  min-width: 18px;
   text-align: center;
 }
 
 header .menu_side .menu_song li.song_item img {
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
   border-radius: var(--radius-xs);
   object-fit: cover;
   box-shadow: var(--shadow-sm);
-  transition: var(--transition-fast);
-}
-
-header .menu_side .menu_song li.song_item:hover img {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 header .menu_side .menu_song li.song_item h5 {
   flex: 1;
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--text-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 1.3;
+  line-height: 1.2;
+  padding-right: 28px;
 }
 
 header .menu_side .menu_song li.song_item h5 .subtitle {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 500;
   color: var(--text-secondary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 header .menu_side .menu_song li.song_item .BluesPlay {
-  font-size: 1.4rem;
+  position: absolute;
+  right: 10px;
+  font-size: 1.15rem;
   color: var(--text-muted);
   opacity: 0.6;
   transition: var(--transition-bounce);
@@ -320,7 +319,7 @@ header .menu_side .menu_song li.song_item .BluesPlay {
 header .menu_side .menu_song li.song_item:hover .BluesPlay {
   color: var(--accent-cyan);
   opacity: 1;
-  transform: scale(1.15);
+  transform: scale(1.1);
 }
 
 /* --------------------------------------------------------------------------
@@ -334,7 +333,7 @@ header .song_side {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  padding: 0 var(--space-xl) var(--space-xl) var(--space-xl);
+  padding: 0 var(--space-lg) var(--space-lg) var(--space-lg);
   position: relative;
 }
 
@@ -343,7 +342,7 @@ header .song_side nav {
   top: 0;
   z-index: 50;
   width: 100%;
-  height: 80px;
+  height: 70px;
   background: rgba(7, 9, 14, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -351,7 +350,7 @@ header .song_side nav {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--border-subtle);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
   padding: 0 var(--space-xs);
   gap: var(--space-sm);
 }
@@ -360,7 +359,7 @@ header .song_side nav {
   display: none;
   background: transparent;
   border: none;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--text-primary);
   cursor: pointer;
   padding: 4px;
@@ -369,13 +368,13 @@ header .song_side nav {
 header .song_side nav ul {
   display: flex;
   align-items: center;
-  gap: var(--space-lg);
+  gap: var(--space-md);
   list-style: none;
 }
 
 header .song_side nav ul li.nav_tab {
   position: relative;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.5px;
   color: var(--text-secondary);
@@ -405,13 +404,13 @@ header .song_side nav ul li.nav_tab.active_tab span {
 
 header .song_side nav .search {
   position: relative;
-  width: 320px;
+  width: 280px;
   display: flex;
   align-items: center;
   background: var(--bg-surface-elevated);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-full);
-  padding: var(--space-xs) var(--space-md);
+  padding: 6px var(--space-md);
   transition: var(--transition-normal);
 }
 
@@ -422,7 +421,7 @@ header .song_side nav .search:focus-within {
 }
 
 header .song_side nav .search .bi-search {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
   margin-right: var(--space-xs);
 }
@@ -434,7 +433,7 @@ header .song_side nav .search input {
   outline: none;
   color: var(--text-primary);
   font-family: var(--font-family);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 500;
 }
 
@@ -444,8 +443,8 @@ header .song_side nav .search input::placeholder {
 
 header .song_side nav .user {
   position: relative;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-full);
   padding: 2px;
   background: var(--accent-gradient);
@@ -474,16 +473,18 @@ header .song_side nav .user img {
 header .song_side .content {
   position: relative;
   width: 100%;
-  min-height: 240px;
+  height: 180px;
+  min-height: 180px;
+  max-height: 200px;
   background: linear-gradient(135deg, rgba(0, 242, 254, 0.15) 0%, rgba(15, 20, 32, 0.85) 100%);
   border: 1px solid var(--border-medium);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-xl);
+  gap: 6px;
+  margin-bottom: var(--space-lg);
   box-shadow: var(--shadow-md);
   overflow: hidden;
   transition: background 0.5s ease-in-out;
@@ -494,8 +495,8 @@ header .song_side .content::before {
   position: absolute;
   top: -50%;
   right: -10%;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   background: radial-gradient(circle, rgba(0, 242, 254, 0.2) 0%, transparent 70%);
   pointer-events: none;
   border-radius: 50%;
@@ -507,52 +508,55 @@ header .song_side .content .content_badge {
   align-items: center;
   gap: 6px;
   width: fit-content;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   color: var(--accent-cyan);
   background: rgba(0, 242, 254, 0.1);
   border: 1px solid rgba(0, 242, 254, 0.25);
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: var(--radius-full);
   text-transform: uppercase;
 }
 
 header .song_side .content h1 {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-weight: 800;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
   color: var(--text-primary);
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
   line-height: 1.1;
 }
 
 header .song_side .content p {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-secondary);
-  line-height: 1.6;
-  max-width: 600px;
+  line-height: 1.4;
+  max-width: 550px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 header .song_side .content .buttons {
-  margin-top: var(--space-xs);
+  margin-top: 4px;
 }
 
 header .song_side .content .buttons button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-xs);
-  height: 44px;
-  padding: 0 var(--space-lg);
+  gap: 6px;
+  height: 38px;
+  padding: 0 var(--space-md);
   border: none;
   outline: none;
   border-radius: var(--radius-full);
   background: var(--accent-gradient);
   color: #07090e;
   font-family: var(--font-family);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 700;
   cursor: pointer;
   box-shadow: var(--shadow-accent);
@@ -561,7 +565,7 @@ header .song_side .content .buttons button {
 
 header .song_side .content .buttons button:hover {
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 10px 30px rgba(0, 242, 254, 0.5);
+  box-shadow: 0 8px 24px rgba(0, 242, 254, 0.5);
   background: var(--accent-gradient-hover);
 }
 
@@ -569,7 +573,7 @@ header .song_side .Trending,
 header .song_side .Bliss,
 header .song_side .Blues {
   width: 100%;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
 }
 
 header .song_side .Trending .h4,
@@ -578,13 +582,13 @@ header .song_side .Blues .h4 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-xs);
 }
 
 header .song_side .Trending .h4 h4,
 header .song_side .Bliss .h4 h4,
 header .song_side .Blues .h4 h4 {
-  font-size: 1.35rem;
+  font-size: 1.15rem;
   font-weight: 800;
   letter-spacing: -0.3px;
   color: var(--text-primary);
@@ -595,7 +599,7 @@ header .song_side .Bliss .h4 .btn_s,
 header .song_side .Blues .h4 .btn_s {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
+  gap: 6px;
 }
 
 header .song_side .Trending .h4 .btn_s .bi,
@@ -604,13 +608,13 @@ header .song_side .Blues .h4 .btn_s .bi {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   border-radius: var(--radius-full);
   background: var(--bg-surface-elevated);
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: var(--transition-bounce);
 }
@@ -622,7 +626,6 @@ header .song_side .Blues .h4 .btn_s .bi:hover {
   color: var(--text-primary);
   border-color: var(--accent-cyan);
   transform: scale(1.1);
-  box-shadow: 0 0 12px var(--accent-glow);
 }
 
 header .song_side .Trending .trending_song,
@@ -630,10 +633,10 @@ header .song_side .Bliss .bliss_song,
 header .song_side .Blues .blues_song {
   width: 100%;
   display: flex;
-  gap: var(--space-md);
+  gap: var(--space-sm);
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding-bottom: var(--space-sm);
+  padding: 4px 0 var(--space-xs) 0;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
@@ -648,12 +651,14 @@ header .song_side .Blues .blues_song::-webkit-scrollbar {
 header .song_side .Trending .trending_song li.song_item,
 header .song_side .Bliss .bliss_song li.song_item,
 header .song_side .Blues .blues_song li.song_item {
-  min-width: 160px;
-  max-width: 160px;
+  width: 140px;
+  min-width: 140px;
+  max-width: 140px;
+  height: 185px;
   background: var(--bg-glass-card);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  padding: 8px;
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -661,6 +666,7 @@ header .song_side .Blues .blues_song li.song_item {
   transition: var(--transition-normal);
   backdrop-filter: blur(8px);
   scroll-snap-align: start;
+  flex-shrink: 0;
 }
 
 header .song_side .Trending .trending_song li.song_item:hover,
@@ -668,8 +674,8 @@ header .song_side .Bliss .bliss_song li.song_item:hover,
 header .song_side .Blues .blues_song li.song_item:hover {
   background: var(--bg-surface-hover);
   border-color: var(--border-accent);
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sm);
 }
 
 header .song_side .Trending .trending_song li.song_item .img_play,
@@ -677,11 +683,11 @@ header .song_side .Bliss .bliss_song li.song_item .img_play,
 header .song_side .Blues .blues_song li.song_item .img_play {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: var(--radius-sm);
+  height: 124px;
+  min-height: 124px;
+  border-radius: var(--radius-xs);
   overflow: hidden;
-  margin-bottom: var(--space-xs);
-  box-shadow: var(--shadow-sm);
+  margin-bottom: 6px;
 }
 
 header .song_side .Trending .trending_song li.song_item .img_play img,
@@ -690,13 +696,14 @@ header .song_side .Blues .blues_song li.song_item .img_play img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: var(--transition-normal);
 }
 
 header .song_side .Trending .trending_song li.song_item:hover .img_play img,
 header .song_side .Bliss .bliss_song li.song_item:hover .img_play img,
 header .song_side .Blues .blues_song li.song_item:hover .img_play img {
-  transform: scale(1.08);
+  transform: scale(1.06);
 }
 
 header .song_side .Trending .trending_song li.song_item .img_play .BluesPlay,
@@ -705,11 +712,11 @@ header .song_side .Blues .blues_song li.song_item .img_play .BluesPlay {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -40%) scale(0.7);
-  font-size: 2.8rem;
+  transform: translate(-50%, -50%) scale(0.8);
+  font-size: 1.6rem;
   color: var(--accent-cyan);
   opacity: 0;
-  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.8));
   transition: var(--transition-bounce);
   pointer-events: auto;
 }
@@ -724,25 +731,25 @@ header .song_side .Blues .blues_song li.song_item:hover .img_play .BluesPlay {
 header .song_side .Trending .trending_song li.song_item h5,
 header .song_side .Bliss .bliss_song li.song_item h5,
 header .song_side .Blues .blues_song li.song_item h5 {
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--text-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 header .song_side .Trending .trending_song li.song_item h5 .subtitle,
 header .song_side .Bliss .bliss_song li.song_item h5 .subtitle,
 header .song_side .Blues .blues_song li.song_item h5 .subtitle {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 500;
   color: var(--text-secondary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-top: 3px;
+  margin-top: 2px;
 }
 
 /* --------------------------------------------------------------------------
@@ -759,7 +766,7 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
 
 .search_results_container {
   width: 100%;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
   animation: fadeIn 0.3s ease-out;
 }
 
@@ -767,38 +774,38 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 .search_results_container .section_header h4 {
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   font-weight: 800;
 }
 
 .search_results_container .badge {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   background: var(--bg-surface-elevated);
   border: 1px solid var(--border-medium);
   color: var(--accent-cyan);
-  padding: 4px 10px;
+  padding: 3px 8px;
   border-radius: var(--radius-full);
 }
 
 .search_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-sm);
 }
 
 .search_card {
   background: var(--bg-surface-elevated);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  padding: var(--space-xs);
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--space-xs);
   cursor: pointer;
   transition: var(--transition-bounce);
 }
@@ -806,14 +813,13 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
 .search_card:hover {
   background: var(--bg-surface-hover);
   border-color: var(--accent-cyan);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
 }
 
 .search_card .search_img {
   position: relative;
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-xs);
   overflow: hidden;
   flex-shrink: 0;
@@ -830,7 +836,7 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--accent-cyan);
   opacity: 0;
   transition: var(--transition-fast);
@@ -841,21 +847,21 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
 }
 
 .search_card .search_info {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--text-primary);
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .no_results {
   grid-column: 1 / -1;
   text-align: center;
-  padding: var(--space-xl) 0;
+  padding: var(--space-lg) 0;
   color: var(--text-muted);
 }
 
 .no_results .bi {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: var(--space-xs);
   color: var(--text-secondary);
 }
@@ -863,62 +869,62 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
 .library_hero {
   background: linear-gradient(135deg, rgba(79, 172, 254, 0.15) 0%, rgba(15, 20, 32, 0.8) 100%);
   border: 1px solid var(--border-medium);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
-  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .library_hero .library_info {
   display: flex;
   align-items: center;
-  gap: var(--space-lg);
+  gap: var(--space-md);
 }
 
 .library_hero .library_icon_badge {
-  width: 72px;
-  height: 72px;
-  border-radius: var(--radius-md);
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-sm);
   background: var(--accent-gradient);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   color: #07090e;
   box-shadow: var(--shadow-accent);
 }
 
 .library_hero .subhead {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 1px;
   color: var(--accent-cyan);
 }
 
 .library_hero h2 {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 800;
   letter-spacing: -0.5px;
 }
 
 .library_hero .meta {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-secondary);
 }
 
 .library_filter_bar {
   display: flex;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-md);
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
 }
 
 .filter_pill {
   background: var(--bg-surface-elevated);
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
-  padding: var(--space-xs) var(--space-md);
+  padding: 6px var(--space-md);
   border-radius: var(--radius-full);
   font-family: var(--font-family);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition-fast);
@@ -942,7 +948,7 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
   width: 100%;
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   overflow-x: auto;
 }
 
@@ -954,8 +960,8 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
 }
 
 .track_table th {
-  padding: var(--space-sm) var(--space-md);
-  font-size: 0.78rem;
+  padding: 10px var(--space-md);
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -963,8 +969,8 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
 }
 
 .track_table td {
-  padding: var(--space-sm) var(--space-md);
-  font-size: 0.88rem;
+  padding: 10px var(--space-md);
+  font-size: 0.82rem;
   color: var(--text-primary);
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
@@ -981,18 +987,18 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
 .track_row .num {
   font-weight: 700;
   color: var(--text-muted);
-  width: 40px;
+  width: 36px;
 }
 
 .track_row .title_cell {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--space-xs);
 }
 
 .track_row .title_cell img {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-xs);
   object-fit: cover;
 }
@@ -1003,7 +1009,7 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
 }
 
 .track_row .song_artist_txt {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--text-secondary);
 }
 
@@ -1011,7 +1017,7 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
   background: var(--accent-gradient);
   border: none;
   color: #07090e;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 700;
   padding: 4px 12px;
   border-radius: var(--radius-full);
@@ -1027,32 +1033,32 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
 .radio_hero {
   background: linear-gradient(135deg, rgba(0, 242, 254, 0.15) 0%, rgba(15, 20, 32, 0.9) 100%);
   border: 1px solid var(--border-medium);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
-  margin-bottom: var(--space-xl);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
 }
 
 .radio_hero .live_badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.72rem;
+  gap: 6px;
+  font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 1px;
   color: #ef4444;
   background: rgba(239, 68, 68, 0.12);
   border: 1px solid rgba(239, 68, 68, 0.3);
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: var(--radius-full);
-  margin-bottom: var(--space-xs);
+  margin-bottom: 4px;
 }
 
 .radio_hero .pulse_dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #ef4444;
-  box-shadow: 0 0 10px #ef4444;
+  box-shadow: 0 0 8px #ef4444;
   animation: pulse 1.2s infinite alternate;
 }
 
@@ -1062,33 +1068,33 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
 }
 
 .radio_hero h2 {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 800;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .radio_hero p {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 }
 
 .radio_grid_section h4 {
-  font-size: 1.35rem;
+  font-size: 1.15rem;
   font-weight: 800;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 .radio_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-sm);
 }
 
 .radio_card {
   background: var(--bg-glass-card);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
   cursor: pointer;
   transition: var(--transition-normal);
 }
@@ -1096,28 +1102,22 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
 .radio_card:hover {
   background: var(--bg-surface-hover);
   border-color: var(--accent-cyan);
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
 }
 
 .radio_card .radio_img {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-xs);
   overflow: hidden;
-  margin-bottom: var(--space-xs);
+  margin-bottom: 6px;
 }
 
 .radio_card .radio_img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: var(--transition-normal);
-}
-
-.radio_card:hover .radio_img img {
-  transform: scale(1.08);
 }
 
 .radio_card .radio_overlay {
@@ -1127,7 +1127,7 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 2.2rem;
   color: var(--accent-cyan);
   opacity: 0;
   transition: var(--transition-bounce);
@@ -1138,23 +1138,23 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
 }
 
 .radio_card h5 {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 700;
   margin-bottom: 2px;
 }
 
 .radio_card p {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   color: var(--text-secondary);
 }
 
 .toast_container {
   position: fixed;
-  bottom: 105px;
-  right: var(--space-xl);
+  bottom: 100px;
+  right: var(--space-lg);
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: 6px;
   z-index: 999;
   pointer-events: none;
 }
@@ -1163,9 +1163,9 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
   background: rgba(22, 29, 45, 0.95);
   border: 1px solid var(--accent-cyan);
   color: var(--text-primary);
-  padding: var(--space-xs) var(--space-md);
+  padding: 6px var(--space-md);
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -1183,7 +1183,7 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
 
 .toast_item .bi {
   color: var(--accent-cyan);
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 @keyframes slideInRight {
@@ -1197,7 +1197,7 @@ header .song_side .Blues .blues_song li.song_item h5 .subtitle {
 header .master_play {
   grid-area: player;
   width: 100%;
-  height: 90px;
+  height: 85px;
   background: var(--bg-surface);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -1205,7 +1205,7 @@ header .master_play {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--space-xl);
+  padding: 0 var(--space-lg);
   z-index: 100;
   box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.5);
 }
@@ -1213,29 +1213,29 @@ header .master_play {
 header .master_play .master_play_info {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
-  width: 260px;
-  min-width: 200px;
+  gap: var(--space-sm);
+  width: 240px;
+  min-width: 180px;
 }
 
 header .master_play .wave {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: flex-end;
   gap: 3px;
 }
 
 header .master_play .wave .wave1 {
-  width: 4px;
-  height: 6px;
+  width: 3px;
+  height: 5px;
   background: var(--accent-cyan);
   border-radius: var(--radius-full);
   transition: var(--transition-fast);
 }
 
 header .master_play .wave .wave1:nth-child(2) {
-  height: 10px;
+  height: 8px;
 }
 
 header .master_play .wave .wave1:nth-child(3) {
@@ -1256,46 +1256,46 @@ header .master_play .wave.active1 .wave1:nth-child(3) {
 
 @keyframes waveAnim {
   0% { height: 4px; }
-  100% { height: 22px; }
+  100% { height: 18px; }
 }
 
 header .master_play img#poster_master_play {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-sm);
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-xs);
   object-fit: cover;
   box-shadow: var(--shadow-sm);
 }
 
 header .master_play h5#title {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 160px;
-  line-height: 1.3;
+  max-width: 150px;
+  line-height: 1.2;
 }
 
 header .master_play h5#title .subtitle {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 500;
   color: var(--text-secondary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 header .master_play .master_play_center {
   flex: 1;
-  max-width: 650px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2xs);
+  gap: 2px;
 }
 
 header .master_play .icon {
@@ -1306,7 +1306,7 @@ header .master_play .icon {
 }
 
 header .master_play .icon .bi {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: var(--text-secondary);
   cursor: pointer;
   transition: var(--transition-bounce);
@@ -1314,7 +1314,7 @@ header .master_play .icon .bi {
 
 header .master_play .icon .bi:hover {
   color: var(--text-primary);
-  transform: scale(1.15);
+  transform: scale(1.1);
 }
 
 header .master_play .icon .bi.active_mode {
@@ -1328,58 +1328,56 @@ header .master_play .icon .bi.liked {
 }
 
 header .master_play .icon #masterPlay {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-full);
   background: var(--accent-gradient);
   color: #07090e;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   box-shadow: var(--shadow-accent);
   transition: var(--transition-bounce);
   padding-left: 2px;
 }
 
 header .master_play .icon #masterPlay:hover {
-  transform: scale(1.12);
+  transform: scale(1.1);
   background: var(--accent-gradient-hover);
-  box-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
 }
 
 header .master_play .icon #download_music {
   color: var(--text-secondary);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   transition: var(--transition-bounce);
   text-decoration: none;
 }
 
 header .master_play .icon #download_music:hover {
   color: var(--accent-cyan);
-  transform: scale(1.15);
 }
 
 header .master_play .timeline_container {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--space-xs);
 }
 
 header .master_play span#currentStart,
 header .master_play span#currentEnd {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
   color: var(--text-muted);
-  min-width: 32px;
+  min-width: 30px;
   text-align: center;
 }
 
 header .master_play .bar {
   position: relative;
   flex: 1;
-  height: 5px;
+  height: 4px;
   background: var(--bg-surface-elevated);
   border-radius: var(--radius-full);
   cursor: pointer;
@@ -1404,8 +1402,8 @@ header .master_play .bar .dot {
   top: 50%;
   left: 0%;
   transform: translate(-50%, -50%);
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background: var(--text-primary);
   border: 2px solid var(--accent-cyan);
   border-radius: var(--radius-full);
@@ -1415,7 +1413,7 @@ header .master_play .bar .dot {
 }
 
 header .master_play .bar:hover .dot {
-  transform: translate(-50%, -50%) scale(1.25);
+  transform: translate(-50%, -50%) scale(1.2);
 }
 
 header .master_play .bar input[type="range"] {
@@ -1430,7 +1428,7 @@ header .master_play .bar input[type="range"] {
 }
 
 header .master_play .master_play_right {
-  width: 200px;
+  width: 180px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -1438,8 +1436,8 @@ header .master_play .master_play_right {
 
 header .master_play .vol {
   position: relative;
-  width: 120px;
-  height: 5px;
+  width: 100px;
+  height: 4px;
   background: var(--bg-surface-elevated);
   border-radius: var(--radius-full);
   display: flex;
@@ -1448,8 +1446,8 @@ header .master_play .vol {
 
 header .master_play .vol .bi#vol_icon {
   position: absolute;
-  left: -28px;
-  font-size: 1.1rem;
+  left: -24px;
+  font-size: 1rem;
   color: var(--text-secondary);
   cursor: pointer;
   transition: var(--transition-fast);
@@ -1475,8 +1473,8 @@ header .master_play .vol .dot#vol_dot {
   top: 50%;
   left: 100%;
   transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   background: var(--text-primary);
   border-radius: var(--radius-full);
   transition: left 0.1s linear;
@@ -1498,25 +1496,22 @@ header .master_play .vol input[type="range"]#vol {
    9. RESPONSIVE BREAKPOINTS & MOBILE OPTIMIZATIONS
    -------------------------------------------------------------------------- */
 
-/* Laptop & Tablet (< 1024px) */
 @media screen and (max-width: 1024px) {
   header {
     grid-template-columns: 240px 1fr;
   }
   
   header .song_side nav .search {
-    width: 240px;
+    width: 220px;
   }
 }
 
-/* Mobile & Tablet (< 768px) */
+/* Mobile Screens (< 768px): Fixed Always-Visible Bottom Player Dock & Padded Page Content */
 @media screen and (max-width: 768px) {
   header {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 85px;
-    grid-template-areas:
-      "main"
-      "player";
+    grid-template-rows: 1fr;
+    grid-template-areas: "main";
   }
 
   /* Slide-Out Drawer Sidebar for Mobile */
@@ -1524,16 +1519,16 @@ header .master_play .vol input[type="range"]#vol {
     position: fixed;
     top: 0;
     left: 0;
-    width: 280px;
+    width: 270px;
     height: 100vh;
-    z-index: 1000;
+    z-index: 10000;
     transform: translateX(-100%);
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   header .menu_side.mobile_open {
     transform: translateX(0);
-    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.8);
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.85);
   }
 
   .close_sidebar_btn {
@@ -1545,7 +1540,7 @@ header .master_play .vol input[type="range"]#vol {
   }
 
   header .song_side {
-    padding: 0 var(--space-md) var(--space-xl) var(--space-md);
+    padding: 0 var(--space-md) 100px var(--space-md) !important; /* Bottom padding prevents fixed player overlap */
   }
 
   header .song_side nav {
@@ -1558,76 +1553,91 @@ header .master_play .vol input[type="range"]#vol {
   }
 
   header .song_side nav ul li.nav_tab {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
   }
 
   header .song_side nav .search {
-    width: 160px;
-    padding: 6px var(--space-xs);
+    width: 150px;
+    padding: 4px var(--space-xs);
   }
 
   header .song_side nav .search input {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
   }
 
   header .song_side .content {
     padding: var(--space-md);
-    min-height: 180px;
+    height: 160px;
+    min-height: 160px;
   }
 
   header .song_side .content h1 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   header .song_side .content p {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
   }
 
   header .song_side .Trending .trending_song li.song_item,
   header .song_side .Bliss .bliss_song li.song_item,
   header .song_side .Blues .blues_song li.song_item {
-    min-width: 140px;
-    max-width: 140px;
+    width: 130px;
+    min-width: 130px;
+    max-width: 130px;
+    height: 175px;
   }
 
-  /* Compact Master Player Dock for Mobile */
+  header .song_side .Trending .trending_song li.song_item .img_play,
+  header .song_side .Bliss .bliss_song li.song_item .img_play,
+  header .song_side .Blues .blues_song li.song_item .img_play {
+    height: 115px;
+    min-height: 115px;
+  }
+
+  /* Fixed Master Player Dock on Mobile - Always Visible */
   header .master_play {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
     height: 85px;
+    z-index: 9999;
     padding: 0 var(--space-md);
+    background: var(--bg-surface);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-medium);
   }
 
   header .master_play .master_play_info {
     width: auto;
-    max-width: 130px;
+    max-width: 120px;
     gap: var(--space-xs);
   }
 
   header .master_play img#poster_master_play {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
   }
 
   header .master_play h5#title {
-    max-width: 85px;
-    font-size: 0.82rem;
-  }
-
-  header .master_play .master_play_center {
-    gap: 2px;
+    max-width: 80px;
+    font-size: 0.78rem;
   }
 
   header .master_play .icon {
-    gap: var(--space-sm);
+    gap: var(--space-xs);
   }
 
   header .master_play .icon .bi {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   header .master_play .icon #masterPlay {
-    width: 36px;
-    height: 36px;
-    font-size: 1.2rem;
+    width: 34px;
+    height: 34px;
+    font-size: 1.15rem;
   }
 
   header .master_play .master_play_right {
@@ -1640,18 +1650,13 @@ header .master_play .vol input[type="range"]#vol {
   }
 }
 
-/* Small Mobile (< 480px) */
 @media screen and (max-width: 480px) {
   header .song_side nav .search {
     display: none;
   }
 
   header .song_side .content h1 {
-    font-size: 1.4rem;
-  }
-
-  header .song_side .content p {
-    font-size: 0.78rem;
+    font-size: 1.3rem;
   }
 
   header .master_play .wave {
@@ -1660,7 +1665,7 @@ header .master_play .vol input[type="range"]#vol {
 
   header .master_play span#currentStart,
   header .master_play span#currentEnd {
-    font-size: 0.68rem;
-    min-width: 26px;
+    font-size: 0.65rem;
+    min-width: 24px;
   }
 }
