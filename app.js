@@ -23,20 +23,14 @@ const songs = [
     { id: 20, songName: `Chella Kutty <br><div class="subtitle">Theri</div>`, poster: "img/20.jpg" },
     { id: 21, songName: `Newyork Nagaram <br><div class="subtitle">Sillunu oru kadhal</div>`, poster: "img/21.jpg" },
     { id: 22, songName: `Nalla Nanban <br><div class="subtitle">Nanban</div>`, poster: "img/22.jpg" },
-    { id: 23, songName: `Death of Bahubali<br><div class="subtitle">Bahubali</div>`, poster: "img/23.jpg" },
+    { id: 23, songName: `Death of Bahubali <br><div class="subtitle">Bahubali</div>`, poster: "img/23.jpg" },
     { id: 24, songName: `Muthu Mazhaiye <br><div class="subtitle">Mazhai</div>`, poster: "img/24.jpg" },
     { id: 25, songName: `Pain Of Love <br><div class="subtitle">3</div>`, poster: "img/25.jpg" },
     { id: 26, songName: `Theme of Sita Ramam <br><div class="subtitle">Sita Ramam</div>`, poster: "img/26.jpg" },
     { id: 27, songName: `Life Of Pazham <br><div class="subtitle">Thiruchitrambalam</div>`, poster: "img/27.jpg" },
     { id: 28, songName: `Hello bgm <br><div class="subtitle">Hello</div>`, poster: "img/28.jpg" },
     { id: 29, songName: `Unnale Ennalum <br><div class="subtitle">Theri</div>`, poster: "img/29.jpg" },
-    { id: 30, songName: `Uyire Uyire <br><div class="subtitle">Santhosh Subramanian</div>`, poster: "img/30.jpg" },
-    { id: 31, songName: `Hukum <br><div class="subtitle">Jailer</div>`, poster: "img/31.jpg" },
-    { id: 32, songName: `Naa Ready <br><div class="subtitle">Leo</div>`, poster: "img/32.jpg" },
-    { id: 33, songName: `Arabic Kuthu <br><div class="subtitle">Beast</div>`, poster: "img/33.jpg" },
-    { id: 34, songName: `Vaathi Coming <br><div class="subtitle">Master</div>`, poster: "img/34.jpg" },
-    { id: 35, songName: `Enjoy Enjaami <br><div class="subtitle">Dhee ft. Arivu</div>`, poster: "img/35.jpg" },
-    { id: 36, songName: `Ranjithame <br><div class="subtitle">Varisu</div>`, poster: "img/36.jpg" },
+    { id: 30, songName: `Uyire Uyire <br><div class="subtitle">Santhosh Subramanian</div>`, poster: "img/30.jpg" }
 ];
 
 const songDescriptions = {
@@ -69,13 +63,7 @@ const songDescriptions = {
     27: "Life Of Pazham... Relaxed, introspective acoustic track from Thiruchitrambalam.",
     28: "Hello BGM... Catchy, uplifting background instrumentals from Hello.",
     29: "Unnale Ennalum... Vibrant romantic melody from Theri.",
-    30: "Uyire Uyire... Touching love track from Santhosh Subramanian.",
-    31: "Hukum Tiger Ka Hukum! Massive chart-topping mass anthem composed by Anirudh for Jailer.",
-    32: "Naa Ready Than Varava... High energy mass dance chartbuster from Leo.",
-    33: "Halamithi Habibo... Global viral sensation Arabic Kuthu track from Beast.",
-    34: "Vaathi Coming... Unstoppable shoulder dance party anthem from Master.",
-    35: "Enjoy Enjaami... Cuckoo Cuckoo... Iconic indie hit celebrating nature & roots.",
-    36: "Ranjithame Ranjithame... Electrifying folk beat dance track from Varisu."
+    30: "Uyire Uyire... Touching love track from Santhosh Subramanian."
 };
 
 let index = 1;
@@ -473,17 +461,6 @@ next.addEventListener('click', () => {
 });
 
 // Carousel Scroll Controls
-let trending_song_left = document.getElementById('trending_song_left');
-let trending_song_right = document.getElementById('trending_song_right');
-let trending_song = document.getElementsByClassName('trending_song')[0];
-
-if (trending_song_right && trending_song) {
-    trending_song_right.addEventListener('click', () => { trending_song.scrollLeft += 330; });
-}
-if (trending_song_left && trending_song) {
-    trending_song_left.addEventListener('click', () => { trending_song.scrollLeft -= 330; });
-}
-
 let bliss_song_left = document.getElementById('bliss_song_left');
 let bliss_song_right = document.getElementById('bliss_song_right');
 let bliss_song = document.getElementsByClassName('bliss_song')[0];
@@ -555,9 +532,11 @@ let currentLibraryFilter = 'all';
 const populateLibraryTable = () => {
     const tableBody = document.getElementById('library_track_list');
     const favCountSpan = document.getElementById('fav_count');
+    const totalTracksSpan = document.getElementById('total_tracks_count');
     if (!tableBody) return;
 
     if (favCountSpan) favCountSpan.innerText = favorites.length;
+    if (totalTracksSpan) totalTracksSpan.innerText = songs.length;
 
     let displayList = songs;
     if (currentLibraryFilter === 'fav') {
