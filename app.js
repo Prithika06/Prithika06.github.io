@@ -99,12 +99,16 @@ const showToast = (message, iconClass = 'bi-info-circle-fill') => {
 };
 
 // Initialize song items on page load
-Array.from(document.getElementsByClassName(`songItem`)).forEach((e, i) => {
-    if (songs[i]) {
-        let imgTag = e.getElementsByTagName('img')[0];
-        let h5Tag = e.getElementsByTagName('h5')[0];
-        if (imgTag) imgTag.src = songs[i].poster;
-        if (h5Tag) h5Tag.innerHTML = songs[i].songName;
+Array.from(document.getElementsByClassName(`songItem`)).forEach((e) => {
+    let playIcon = e.querySelector('.BluesPlay');
+    if (playIcon && playIcon.id) {
+        let songObj = songs.find((s) => s.id == playIcon.id);
+        if (songObj) {
+            let imgTag = e.getElementsByTagName('img')[0];
+            let h5Tag = e.getElementsByTagName('h5')[0];
+            if (imgTag) imgTag.src = songObj.poster;
+            if (h5Tag) h5Tag.innerHTML = songObj.songName;
+        }
     }
 });
 
@@ -212,8 +216,7 @@ const makeAllBackground = () => {
 
 const updatePlayIconsState = (trackId, isPlaying) => {
     makeAllPlays();
-    let currentIcon = document.getElementById(`${trackId}`);
-    if (currentIcon) {
+    Array.from(document.querySelectorAll(`.BluesPlay[id="${trackId}"]`)).forEach((currentIcon) => {
         if (isPlaying) {
             currentIcon.classList.remove('bi-play-circle-fill');
             currentIcon.classList.add('bi-pause-circle-fill');
@@ -221,7 +224,7 @@ const updatePlayIconsState = (trackId, isPlaying) => {
             currentIcon.classList.add('bi-play-circle-fill');
             currentIcon.classList.remove('bi-pause-circle-fill');
         }
-    }
+    });
 };
 
 // Play Song Function
@@ -245,10 +248,12 @@ const playTrack = (trackId) => {
     }
 
     makeAllBackground();
-    let allItems = document.getElementsByClassName('songItem');
-    if (allItems[index - 1]) {
-        allItems[index - 1].style.background = "rgba(0, 242, 254, 0.08)";
-    }
+    Array.from(document.getElementsByClassName('songItem')).forEach((e) => {
+        let playIcon = e.querySelector('.BluesPlay');
+        if (playIcon && Number(playIcon.id) === index) {
+            e.style.background = "rgba(0, 242, 254, 0.08)";
+        }
+    });
     updatePlayIconsState(index, true);
     updateHeroBanner(index);
     updateFavoriteButton(index);
@@ -296,8 +301,23 @@ let currentEnd = document.getElementById('currentEnd');
 let seek = document.getElementById('seek');
 let bar2 = document.getElementById('bar2');
 let dot = document.getElementsByClassName('dot')[0];
+let isSeeking = false;
+
+const updateSeekDisplay = (val) => {
+    if (bar2) bar2.style.width = `${val}%`;
+    if (dot) dot.style.left = `${val}%`;
+    if (music.duration && !isNaN(music.duration) && currentStart) {
+        let seekTime = (val * music.duration) / 100;
+        let min2 = Math.floor(seekTime / 60);
+        let sec2 = Math.floor(seekTime % 60);
+        if (sec2 < 10) sec2 = `0${sec2}`;
+        currentStart.innerText = `${min2}:${sec2}`;
+    }
+};
 
 music.addEventListener('timeupdate', () => {
+    if (isSeeking) return;
+
     let music_curr = music.currentTime;
     let music_dur = music.duration;
 
@@ -305,25 +325,48 @@ music.addEventListener('timeupdate', () => {
         let min1 = Math.floor(music_dur / 60);
         let sec1 = Math.floor(music_dur % 60);
         if (sec1 < 10) sec1 = `0${sec1}`;
-        currentEnd.innerText = `${min1}:${sec1}`;
+        if (currentEnd) currentEnd.innerText = `${min1}:${sec1}`;
 
         let min2 = Math.floor(music_curr / 60);
         let sec2 = Math.floor(music_curr % 60);
         if (sec2 < 10) sec2 = `0${sec2}`;
-        currentStart.innerText = `${min2}:${sec2}`;
+        if (currentStart) currentStart.innerText = `${min2}:${sec2}`;
 
         let progressBar = parseInt((music_curr / music_dur) * 100);
-        seek.value = progressBar;
-        bar2.style.width = `${progressBar}%`;
+        if (seek) seek.value = progressBar;
+        if (bar2) bar2.style.width = `${progressBar}%`;
         if (dot) dot.style.left = `${progressBar}%`;
     }
 });
 
-seek.addEventListener('change', () => {
-    if (music.duration) {
-        music.currentTime = (seek.value * music.duration) / 100;
-    }
-});
+if (seek) {
+    seek.addEventListener('input', () => {
+        isSeeking = true;
+        updateSeekDisplay(seek.value);
+    });
+
+    seek.addEventListener('change', () => {
+        if (music.duration && !isNaN(music.duration)) {
+            music.currentTime = (seek.value * music.duration) / 100;
+        }
+        isSeeking = false;
+    });
+
+    seek.addEventListener('touchstart', () => {
+        isSeeking = true;
+    }, { passive: true });
+
+    seek.addEventListener('touchend', () => {
+        if (music.duration && !isNaN(music.duration)) {
+            music.currentTime = (seek.value * music.duration) / 100;
+        }
+        isSeeking = false;
+    });
+
+    seek.addEventListener('touchcancel', () => {
+        isSeeking = false;
+    });
+}
 
 // Song Ended Handling
 music.addEventListener('ended', () => {
