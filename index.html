@@ -3,8 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="description" content="Tunes - Modern Web Music Streaming Platform">
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,10 +18,14 @@
     </head>
     <body>
         <header>
+            <!-- Mobile Sidebar Backdrop Overlay -->
+            <div class="sidebar_overlay" id="sidebar_overlay"></div>
+
             <!-- Sidebar -->
-            <aside class="menu_side">
+            <aside class="menu_side" id="menu_side">
                 <div class="brand">
                     <h1><i class="bi bi-soundwave brand-icon"></i> Tunes</h1>
+                    <button class="close_sidebar_btn" id="close_sidebar_btn" aria-label="Close Sidebar"><i class="bi bi-x-lg"></i></button>
                 </div>
                 <div class="Music">
                     <h4 class="active"><span></span><i class="bi bi-music-note-beamed"></i>Playlist</h4>
@@ -121,6 +127,7 @@
             <!-- Main Content Area -->
             <main class="song_side">
                 <nav>
+                    <button class="mobile_menu_btn" id="mobile_menu_btn" aria-label="Open Mobile Playlist"><i class="bi bi-list"></i></button>
                     <ul id="main_nav_tabs">
                         <li id="nav_discover" class="nav_tab active_tab">DISCOVER<span></span></li>
                         <li id="nav_library" class="nav_tab">MY LIBRARY</li>
@@ -136,7 +143,7 @@
                     </div>
                 </nav>
 
-                <!-- Search Results Section (Shown when typing) -->
+                <!-- Search Results Section -->
                 <section id="search_results_section" class="search_results_container" style="display: none;">
                     <div class="section_header">
                         <h4>Search Results</h4>
@@ -147,14 +154,81 @@
 
                 <!-- Page 1: Discover -->
                 <div id="page_discover" class="page_view active_view">
-                    <!-- Hero Section -->
-                    <section class="content">
+                    <!-- Dynamic Hero Section -->
+                    <section class="content" id="hero_section">
                         <div class="content_badge"><i class="bi bi-lightning-charge-fill"></i> FEATURED TRACK</div>
-                        <h1>Shiva</h1>            
-                        <p>Olir Vidum En Desane....Kulir Mazhai Than Vaasane.... <br>
+                        <h1 id="hero_title">Shiva</h1>            
+                        <p id="hero_desc">Olir Vidum En Desane....Kulir Mazhai Than Vaasane.... <br>
                             Ezhil Migu En Nesane....Alitholikum Eesane....</p>
                         <div class="buttons">
-                            <button id="hero_play_btn"><i class="bi bi-play-fill"></i> Play</button>        
+                            <button id="hero_play_btn"><i class="bi bi-play-fill"></i> Play Now</button>        
+                        </div>
+                    </section>
+
+                    <!-- Trending Tamil Hits Carousel -->
+                    <section class="Trending">
+                        <div class="h4">
+                            <h4>🔥 Trending Tamil Hits</h4>
+                            <div class="btn_s">
+                                <i class="bi bi-chevron-left" id="trending_song_left" role="button" aria-label="Scroll left Trending"></i>
+                                <i class="bi bi-chevron-right" id="trending_song_right" role="button" aria-label="Scroll right Trending"></i>
+                            </div>
+                        </div>
+                        <div class="trending_song">
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/31.jpg" alt="Hukum">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="31" role="button" aria-label="Play Hukum"></i>
+                                </div> 
+                                <h5>Hukum <br>
+                                    <div class="subtitle">Jailer</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/32.jpg" alt="Naa Ready">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="32" role="button" aria-label="Play Naa Ready"></i>
+                                </div> 
+                                <h5>Naa Ready <br>
+                                    <div class="subtitle">Leo</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/33.jpg" alt="Arabic Kuthu">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="33" role="button" aria-label="Play Arabic Kuthu"></i>
+                                </div> 
+                                <h5>Arabic Kuthu <br>
+                                    <div class="subtitle">Beast</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/34.jpg" alt="Vaathi Coming">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="34" role="button" aria-label="Play Vaathi Coming"></i>
+                                </div> 
+                                <h5>Vaathi Coming <br>
+                                    <div class="subtitle">Master</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/35.jpg" alt="Enjoy Enjaami">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="35" role="button" aria-label="Play Enjoy Enjaami"></i>
+                                </div> 
+                                <h5>Enjoy Enjaami <br>
+                                    <div class="subtitle">Dhee ft. Arivu</div>
+                                </h5>
+                            </li>
+                            <li class="song_item songItem">
+                                <div class="img_play">                       
+                                    <img src="img/36.jpg" alt="Ranjithame">
+                                    <i class="bi BluesPlay bi-play-circle-fill" id="36" role="button" aria-label="Play Ranjithame"></i>
+                                </div> 
+                                <h5>Ranjithame <br>
+                                    <div class="subtitle">Varisu</div>
+                                </h5>
+                            </li>
                         </div>
                     </section>
 
@@ -373,16 +447,15 @@
                             <div>
                                 <span class="subhead">YOUR COLLECTION</span>
                                 <h2>My Library</h2>
-                                <p class="meta">30 Tracks &bull; 2 Playlists &bull; 1 hr 45 min</p>
+                                <p class="meta" id="library_stats_meta">36 Tracks &bull; <span id="fav_count">0</span> Favorites</p>
                             </div>
                         </div>
                     </section>
 
                     <section class="library_content">
                         <div class="library_filter_bar">
-                            <button class="filter_pill active"><i class="bi bi-heart-fill"></i> Favorite Tracks</button>
-                            <button class="filter_pill"><i class="bi bi-disc"></i> Albums</button>
-                            <button class="filter_pill"><i class="bi bi-person-heart"></i> Top Artists</button>
+                            <button class="filter_pill active" id="filter_all"><i class="bi bi-disc"></i> All Tracks</button>
+                            <button class="filter_pill" id="filter_fav"><i class="bi bi-heart-fill"></i> Favorites</button>
                         </div>
 
                         <div class="track_table_container">
@@ -392,7 +465,7 @@
                                         <th>#</th>
                                         <th>Title</th>
                                         <th>Album / Movie</th>
-                                        <th><i class="bi bi-clock"></i></th>
+                                        <th><i class="bi bi-heart"></i></th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -417,6 +490,14 @@
                     <section class="radio_grid_section">
                         <h4>Popular Stations</h4>
                         <div class="radio_grid">
+                            <div class="radio_card" onclick="playRadioStation(31)">
+                                <div class="radio_img">
+                                    <img src="img/31.jpg" alt="Jailer & Leo Radio">
+                                    <div class="radio_overlay"><i class="bi bi-play-circle-fill"></i></div>
+                                </div>
+                                <h5>Mass Hits Radio</h5>
+                                <p>Chartbusters from Jailer & Leo</p>
+                            </div>
                             <div class="radio_card" onclick="playRadioStation(1)">
                                 <div class="radio_img">
                                     <img src="img/1.jpg" alt="A.R. Rahman Radio">
@@ -457,14 +538,6 @@
                                 <h5>Acoustic Unplugged</h5>
                                 <p>Strings, Vocals & Soft Beats</p>
                             </div>
-                            <div class="radio_card" onclick="playRadioStation(3)">
-                                <div class="radio_img">
-                                    <img src="img/3.jpg" alt="Folk & Ethnic">
-                                    <div class="radio_overlay"><i class="bi bi-play-circle-fill"></i></div>
-                                </div>
-                                <h5>Folk & Instrumental</h5>
-                                <p>Traditional Rhythms & Themes</p>
-                            </div>
                         </div>
                     </section>
                 </div>
@@ -486,10 +559,13 @@
                 </div>
                 <div class="master_play_center">
                     <div class="icon">
-                        <i class="bi bi-skip-start-fill" id="back" role="button" aria-label="Previous Track"></i>
-                        <i class="bi bi-play-fill" id="masterPlay" role="button" aria-label="Play/Pause"></i>
-                        <i class="bi bi-skip-end-fill" id="next" role="button" aria-label="Next Track"></i>
-                        <a href="audio/1.mp3" download="Lord_Shiva.mp3" id="download_music" aria-label="Download Song"><i class="bi bi-cloud-arrow-down-fill"></i></a>         
+                        <i class="bi bi-shuffle" id="shuffle_btn" role="button" aria-label="Shuffle" title="Toggle Shuffle Mode"></i>
+                        <i class="bi bi-skip-start-fill" id="back" role="button" aria-label="Previous Track" title="Previous Track"></i>
+                        <i class="bi bi-play-fill" id="masterPlay" role="button" aria-label="Play/Pause" title="Play/Pause"></i>
+                        <i class="bi bi-skip-end-fill" id="next" role="button" aria-label="Next Track" title="Next Track"></i>
+                        <i class="bi bi-repeat" id="repeat_btn" role="button" aria-label="Repeat" title="Toggle Repeat Mode"></i>
+                        <i class="bi bi-heart" id="like_btn" role="button" aria-label="Like Track" title="Add to Favorites"></i>
+                        <a href="audio/1.mp3" download="Lord_Shiva.mp3" id="download_music" aria-label="Download Song" title="Download Song"><i class="bi bi-cloud-arrow-down-fill"></i></a>         
                     </div>
                     <div class="timeline_container">
                         <span id="currentStart">0:00</span>
@@ -511,6 +587,10 @@
                 </div>
             </footer>
         </header>
+
+        <!-- Toast Notifications Container -->
+        <div id="toast_container" class="toast_container"></div>
+
         <script src="app.js"></script>
     </body>
 </html>
